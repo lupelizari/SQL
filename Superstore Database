@@ -32,14 +32,16 @@ VALUES
 
 --Write a SQL query that orders the items by price.
 
-SELECT price, item_name
+SELECT *
 FROM superstore
-ORDER BY price;
+ORDER BY price DESC
+;
 
 -- Write your own SQL query that will show a statistic about the item prices, like a sum, average, minimum, maximum, or count.
 
-SELECT MAX(price), item_name
-FROM superstore;
+SELECT SUM(price)
+FROM superstore
+;
 
 --Write your own SQL query that will show a statistic about the price for items in the category of "Kitchen Supplies".
 
@@ -47,8 +49,11 @@ SELECT MIN(price), item_name
 FROM superstore
 WHERE category='Kitchen Supplies';
 
---Come up with your own question about the data and try to answer it using SQL. What is the highest rating item in stock and how much does it cost?
+--Come up with your own question about the data and try to answer it using SQL.
 
-SELECT MAX(average_rating), item_name, price
-FROM superstore;
+--How many Air Purifiers are in stock?
+SELECT stock_quantity
+FROM superstore
+WHERE item_name="Air Purifier"
+;
 
